@@ -1,0 +1,32 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+
+  --card-size: 350px;
+}
+
+section.main {
+  width: 800px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 14pt;
+}
+
+select,
+textarea,
+input[type=submit] {
+  font-size: 14pt;
+}
+
+input[type=submit] {
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#status-view {
+  text-align: center;
+}

@@ -1,9 +1,14 @@
 const express = require('express');
-const mongodb = require('mongodb').MongoClient;
 const path = require('path');
+const bodyParser = require('body-parser');
+const mongodb = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID;
+
 const MONGO_URL = 'mongodb://localhost:27017/cupcake-db';
 
 const app = express();
+const jsonParser = bodyParser.json();
+app.use(express.static('public'));
 
 let db = null;
 let collection = null;
