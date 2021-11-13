@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Cupcake Ordering System!</title>
+<head>
+    <meta charset="utf-8">
+    <title> Cutesy Cupcakes</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/receipt-view.js" defer></script>
+    <script src="/js/order-view.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/main.js" defer></script>
+</head>
+<body>
 
-        <link rel="stylesheet" href="/css/style.css">
-        <script src="/js/order-view.js" defer></script>
-        <script src="/js/app.js" defer></script>
-        <script src="/js/main.js" defer></script>
-    </head>
-    <body>
-        <section class="main hidden" id="order-view">
-<!--        <section id="order-view">-->
-            <h1> Cutsy Cupcakes!!! </h1>
-            <h2> Your home for contagiously cute cupcakes </h2>
+<!-- View: Card creator -->
+<section class="main hidden" id="creator-view">
+    <h1>Cutesy Cupcakes</h1>
 
-                <form>
-                    <h3>Choose a flavor:</h3>
-                    <select id="choose-flavor">
-                        <option value="chocolate">Chocolate</option>
-                        <option value="butter">Butter</option>
-                        <option value="vanilla">Vanilla</option>
-                    </select>
+    <form>
+        <h3>Choose a flavor:</h3>
+        <select id="card-style-input">
+            <option value="chocolate">Chocolate</option>
+            <option value="vanilla">Vanilla</option>
+            <option value="butter">Butter</option>
+        </select>
 
-                    <input type="submit" value="Place Order">
-                </form>
+        <input type="submit" value="Submit order">
+    </form>
+</section>
 
-        </section>
-        <section class="main hidden" id="receipt-view">
-            <h1> The cost is: </h1>
-                <h2> Hello there ;)</h2>
-        </section>
+<!-- View: Card created message -->
+<section class="main hidden" id="status-view">
+    <h1>Order submitted!</h1>
+    <p>
+        <a href="" id="card-link">View your receipt</a>
+    </p>
+    <p>
+        <a href="/">Order again</a>
+    </p>
+</section>
 
-    </body>
+<!-- View: Display card ID -->
+<section class="main hidden" id="card-container">
+    <h1>Cutesy Cupcakes Receipt</h1>
+    <section id="card-view">
+        <div id="card-image" class=""></div>
+        Total price:<div id="card-message"></div>
+    </section>
+    <a href="/">Order again</a>
+</section>
+</body>
 </html>
