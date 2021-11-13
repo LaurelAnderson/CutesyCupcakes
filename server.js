@@ -14,6 +14,14 @@ app.use(express.static('public'));
 
 let db = null;
 
+const menu = {
+    "red velvet"    : 3.25,
+    "chocolate"     : 3.50,
+    "vanilla"       : 3.00,
+    "butter"        : 3.75,
+    "almond coco loco": 4.00
+};
+
 /*
  * Complete the startDbAndServer function, which connects to the MongoDB
  * server and creates a Node web server listening to port 3000.
@@ -32,15 +40,6 @@ async function startDbAndServer() {
 
 startDbAndServer();
 
-function addCupcakes() {
-    // db.collection('cupcakes').drop();
-    db.collection('cupcake').insertMany([
-        { flavor: "vanilla", price: 3.00 },
-        { flavor: "chocolate", price: 3.25 },
-        { flavor: "butter", price: 3.50 }
-    ]);
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -57,13 +56,9 @@ function addCupcakes() {
 async function onSaveCard(req, res) {
     // Your code goes here.
 
-    const style = req.body.style;
+    const flavor = req.body.style;
 
-    const query = { flavor: String(style) };
-    const cupcake = await db.collection('cupcake').findOne(query);
-    const message = cupcake.price;
-
-    const newEntry = { style: style, message: message };
+    const newEntry = { style: flavor, message: menu[flavor] };
     const response = await db.collection('card').insertOne(newEntry);
 
     res.json({ cardId: response.insertedId });
@@ -98,6 +93,5 @@ app.get('/get/:cardId', onGetCard);
 
 async function onGetCardView(req, res) {
   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-  addCupcakes();
 }
 app.get('*', onGetCardView);
