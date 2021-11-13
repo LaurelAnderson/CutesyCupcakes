@@ -8,7 +8,7 @@ Assuming mongo is already installed, command-t to open a new terminal window and
 
 ```$ mkdir -p data/db```
 
-```$ mongod -dbpath data/db --port 27017```
+```$ mongod -dbpath data/db --port 27016```
 
 Then, to see it in action, run:
 
