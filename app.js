@@ -10,10 +10,13 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
-mongoose.connect('localhost:27017/cupcakes');
+mongoose.connect('mongodb://localhost:27017/cupcakes');
 
 // view engine setup
-app.engine('hbs', engine({defaultLayout: 'layout', extname: '.hbs'}))
+app.engine('hbs', engine({defaultLayout: 'layout', extname: '.hbs',  runtimeOptions: {
+  allowProtoPropertiesByDefault: true,
+  allowProtoMethodsByDefault: true
+}}));
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

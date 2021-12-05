@@ -1,173 +1,20 @@
-<div class="row">
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
+<div class="row g-2">
+    {{#each products}}
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+            <img src="{{this.imagePath}}" class="card-img-top mx-auto" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">{{this.description}}</p>
+                    <div>
+                        <div class="price float-start">${{this.price}}</div>
+                        <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{/each}}
 </div>
 
-<div class="row">
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-        <img src="https://cdn.shopify.com/s/files/1/0266/2304/9805/products/RedVelvet_Shopify_1200x1200.png?v=1599664692" class="card-img-top mx-auto" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Red Velvet</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div>
-                    <div class="price float-start">$3.50</div>
-                    <a href="#" class="btn btn-danger float-end" role="button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
