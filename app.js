@@ -12,6 +12,7 @@ var flash = require('connect-flash');
 var validator = require('express-validator');
 
 var indexRouter = require('./routes/index');
+var userRouter = require('./routes/user');
 
 var app = express();
 
@@ -26,7 +27,7 @@ app.engine('hbs', engine({defaultLayout: 'layout', extname: '.hbs',  runtimeOpti
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-// malware
+// middleware
 app.use(logger('dev'));
 // app.use(bodyParser.json());
 app.use(express.json());
@@ -39,6 +40,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next) {
+  res.locals.login = req.isAuthenticated();
+  next();
+});
+
+app.use('/user', userRouter);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
