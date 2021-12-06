@@ -69,6 +69,26 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
   });
 });
 
+/* route to reduce items by 1 */
+router.get('/reduce/:id', function(req, res, next) {
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  cart.reduceByOne(productId);
+  req.session.cart = cart;
+  res.redirect('/shopping-cart')
+});
+
+/* route to reduce all of a certain item in the cart */
+router.get('/remove/:id', function(req, res, next) {
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  cart.removeItem(productId);
+  req.session.cart = cart;
+  res.redirect('/shopping-cart')
+});
+
 module.exports = router;
 
 function isLoggedIn(req, res, next) {
