@@ -4,13 +4,11 @@ To set this up as *fresh* project, "git clone" the repo, navigate inside, and ru
 
 ```$ npm install```
 
-Assuming mongo is already installed, command-t to open a new terminal window and start the mongo server:
+Assuming mongo is already installed, add all products to the database by running: 
 
-```$ mkdir -p data/db```
+```$ node .\seed\product-seeder.js```
 
-```$ mongod -dbpath data/db --port 27016```
-
-Then, to see it in action, run:
+Then, to start the site:
 
 ```$ npm start```
 
