@@ -11,14 +11,22 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo');
+require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/cupcakes');
-require('./config/passport');
+const connectDB = async() => {
+  try {
+    await mongoose.connect('mongodb://localhost:27017/cupcakes')
+  } catch (err) {
+    console.log('Failed to connect to MongoDB', err);
+  }
+};
+
+connectDB();
 
 // view engine setup
 app.engine('hbs', engine({defaultLayout: 'layout', extname: '.hbs',  runtimeOptions: {
