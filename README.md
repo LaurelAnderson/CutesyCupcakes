@@ -4,9 +4,9 @@ To set this up as *fresh* project, "git clone" the repo, navigate inside, and ru
 
 ```$ npm install```
 
-Assuming mongo is already installed, add all products to the database by running: 
+Add all products to the database by running: 
 
-```$ node .\seed\product-seeder.js```
+```$ npm run seed```
 
 Then, to start the site:
 

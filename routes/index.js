@@ -40,7 +40,7 @@ router.get('/shopping-cart', function(req, res, next) {
 });
 
 /* route to checkout */
-router.get('/checkout', function(req, res, next) {
+router.get('/checkout', isLoggedIn, function(req, res, next) {
   if (!req.session.cart) {
     return res.redirect('/shopping-cart');
   }
@@ -48,14 +48,53 @@ router.get('/checkout', function(req, res, next) {
   res.render('shop/checkout', {total: cart.totalPrice});
 });
 
-router.post('/checkout', function(req, res, next) {
+/* route to purchase— saves to the db, redirects to home, and shows success message */
+router.post('/checkout', isLoggedIn, function(req, res, next) {
   if (!req.session.cart) {
     return res.redirect('/shopping-cart');
   }
+
   var cart = new Cart(req.session.cart);
-  req.flash('success', 'Thank you for your purchase!');
-  req.session.cart = null;
-  res.redirect('/');
+  var order = new Order({
+    user: req.user,
+    cart: cart,
+    address: req.body.address,
+    name: req.body.name
+  });
+
+  order.save(function(err, result) {
+    req.flash('success', 'Thank you for your purchase!');
+    req.session.cart = null;
+    res.redirect('/');
+  });
+});
+
+/* route to reduce items by 1 */
+router.get('/reduce/:id', function(req, res, next) {
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  cart.reduceByOne(productId);
+  req.session.cart = cart;
+  res.redirect('/shopping-cart')
+});
+
+/* route to reduce all of a certain item in the cart */
+router.get('/remove/:id', function(req, res, next) {
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  cart.removeItem(productId);
+  req.session.cart = cart;
+  res.redirect('/shopping-cart')
 });
 
 module.exports = router;
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+      return next();
+  }
+  req.session.oldUrl = req.url;
+  res.redirect('/user/signin');
+}
