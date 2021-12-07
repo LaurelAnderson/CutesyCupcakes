@@ -8,7 +8,7 @@ var products = [
     new Product({
         imagePath: 'https://sweetfreedombakeshop.com/wp-content/uploads/IMG_2845.jpg',
         title: 'Red Velvet',
-        description: 'Moist cocoa-y cake with a luscious cream cheese frosting',
+        description: 'Moist cocoa-y cake with a luscious cream cheese frosting.',
         price: 3.25
     }),
     new Product({
